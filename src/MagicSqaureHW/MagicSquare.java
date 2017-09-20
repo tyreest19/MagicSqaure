@@ -6,34 +6,34 @@ public class MagicSquare {
 
     Integer[][] magicSquare = new Integer[17][17];
 
-    public void GenerateMagicSquareState(int sides) {
-        if (sides % 2 != 0)
-            magicSquare = GenerateOddMagicSqaure(sides);
-            else if (sides % 4 != 0)
-            magicSquare = GenerateSignleMagicSqaure(sides);
-            else
-            magicSquare = GenerateDoubleMagicSqaure(sides);
+    public void GenerateMagicSquareState(int size) {
+        if (size % 2 != 0)
+            magicSquare = GenerateOddMagicSqaure(size);
+        else if (size % 4 != 0)
+            magicSquare = GenerateSignleMagicSqaure(size);
+        else
+            magicSquare = GenerateDoubleMagicSqaure(size);
 
         }
 
-    private static Integer[][] GenerateOddMagicSqaure(int sides) {
-        Integer matrix[][] = new Integer[sides][sides];
-        int x_coordinate = sides / 2;
+    private static Integer[][] GenerateOddMagicSqaure(int size) {
+        Integer matrix[][] = new Integer[size][size];
+        int x_coordinate = size / 2;
         int y_coordinate = 0;
         matrix[y_coordinate][x_coordinate] = 1;
-        for (int i = 2; i <= sides * sides; i++) {
-            // move up formula = (current location - (sides + 1)) % sides
-            // move to the right = (current location r + 1) % sides
-            // move down formula = (current location  + (sides + 1)) % sides
-            int potential_y_coordinate = Math.floorMod((y_coordinate - (sides + 1)), sides);
-            int potential_x_coordinate = (x_coordinate + 1) % sides;
+        for (int i = 2; i <= size * size; i++) {
+            // move up formula = (current location - (size + 1)) % size
+            // move to the right = (current location r + 1) % size
+            // move down formula = (current location  + (size + 1)) % size
+            int potential_y_coordinate = Math.floorMod((y_coordinate - (size + 1)), size);
+            int potential_x_coordinate = (x_coordinate + 1) % size;
             if (matrix[potential_y_coordinate][potential_x_coordinate] == null) {
                 x_coordinate = potential_x_coordinate;
                 y_coordinate = potential_y_coordinate;
                 matrix[y_coordinate][x_coordinate] = i;
             }
             else {
-                y_coordinate = (y_coordinate  + (sides + 1)) % sides;
+                y_coordinate = (y_coordinate  + (size + 1)) % size;
                 matrix[y_coordinate][x_coordinate] = i;
             }
         }
@@ -41,6 +41,7 @@ public class MagicSquare {
     }
 
     private static Integer[][] GenerateSignleMagicSqaure(int sides) {
+        // Generates a magic squares for even numbers that are not divisible by 4
         if (sides < 6 || (sides - 2) % 4 != 0)
             throw new IllegalArgumentException("base must be a positive "
                     + "multiple of 4 plus 2");
@@ -81,20 +82,17 @@ public class MagicSquare {
         return result;
     }
 
-    private static Integer[][]  GenerateDoubleMagicSqaure(final int n) {
-        if (n < 4 || n % 4 != 0)
-            throw new IllegalArgumentException("base must be a positive "
-                    + "multiple of 4");
-
+    private static Integer[][]  GenerateDoubleMagicSqaure(final int side) {
+        // Generates a magic squares for even numbers that are divisible by 4
         // pattern of count-up vs count-down zones
         int bits = 0b1001_0110_0110_1001;
-        int size = n * n;
-        int mult = n / 4;  // how many multiples of 4
+        int size = side * side;
+        int mult = size / 4;  // how many multiples of 4
 
-        Integer[][] result = new Integer[n][n];
+        Integer[][] result = new Integer[size][size];
 
-        for (int r = 0, i = 0; r < n; r++) {
-            for (int c = 0; c < n; c++, i++) {
+        for (int r = 0, i = 0; r < size; r++) {
+            for (int c = 0; c < size; c++, i++) {
                 int bitPos = c / mult + (r / mult) * 4;
                 result[r][c] = (bits & (1 << bitPos)) != 0 ? i + 1 : size - i;
             }
@@ -102,7 +100,11 @@ public class MagicSquare {
         return result;
     }
 
-    private void GenerateMagicSquareState(char id, int sides)  {
+    private void GenerateMagicSquareState(char id, int size)  {
+        // Responsible for generating the 4 different magic square states.
+        // Arguments:
+        //  id: Indicates the square state.
+        //  size: The size of the square so example a 4 by 4 square has a size 4.
         int switched_matrix = 0;
         switch (id) {
             case 'a':
@@ -115,7 +117,7 @@ public class MagicSquare {
                 switched_matrix = 1;
                 break;
         }
-        for (int i = 0; i < sides; i++) {
+        for (int i = 0; i < size; i++) {
             int temp = magicSquare[switched_matrix][i];
             magicSquare[switched_matrix][i] = magicSquare[0][i];
             magicSquare[0][i] = temp;

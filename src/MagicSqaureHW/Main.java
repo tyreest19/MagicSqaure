@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static char GetUserEnteredChar() {
-        // Prompts user to enter a int then returns the int.
+        // Prompts user to enter a char then returns the char.
         boolean userEnterValidInt = false;
         char userEnterChar;
         Scanner reader = new Scanner(System.in);  // Reading from System.in
