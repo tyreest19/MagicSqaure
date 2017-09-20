@@ -4,72 +4,144 @@ import java.lang.*;
 
 public class MagicSquare {
 
-     Map<Character, Integer[][]> magicSquareStates = new HashMap<Character, Integer[][]>();
+    Integer[][] magicSquare = new Integer[17][17];
 
-    public void GenerateMagicSquareState(char id, int sides) {
-        if (!magicSquareStates.containsKey(id)) {
-            // Generates a magic square state for the id that they implementer enter.
-            // Args:
-            //  id: Will be a, b, c, or d and this id will be used to generate magic square state.
-            if (sides % 2 != 0) {
-                Integer matrix[][] = new Integer[sides][sides];
-                int x_coordinate = sides / 2;
-                int y_coordinate = 0;
-                matrix[y_coordinate][x_coordinate] = 1;
-                for (int i = 2; i <= sides * sides; i++) {
-                    // move up formula = (current location - (sides + 1)) % sides
-                    // move to the right = (current location + 1) % sides
-                    // move down formula = (current location + (sides + 1)) % sides
-                    int potential_y_coordinate = Math.floorMod((y_coordinate - (sides + 1)), sides);
-                    int potential_x_coordinate = (x_coordinate + 1) % sides;
-                    if (matrix[potential_y_coordinate][potential_x_coordinate] == null) {
-                        x_coordinate = potential_x_coordinate;
-                        y_coordinate = potential_y_coordinate;
-                        matrix[y_coordinate][x_coordinate] = i;
-                    }
-                    else {
-                        y_coordinate = (y_coordinate  + (sides + 1)) % sides;
-                        matrix[y_coordinate][x_coordinate] = i;
-                    }
-                }
-                magicSquareStates.put(id, matrix);
+    public void GenerateMagicSquareState(int sides) {
+        if (sides % 2 != 0)
+            magicSquare = GenerateOddMagicSqaure(sides);
+            else if (sides % 4 != 0)
+            magicSquare = GenerateSignleMagicSqaure(sides);
+            else
+            magicSquare = GenerateDoubleMagicSqaure(sides);
+
+        }
+
+    private static Integer[][] GenerateOddMagicSqaure(int sides) {
+        Integer matrix[][] = new Integer[sides][sides];
+        int x_coordinate = sides / 2;
+        int y_coordinate = 0;
+        matrix[y_coordinate][x_coordinate] = 1;
+        for (int i = 2; i <= sides * sides; i++) {
+            // move up formula = (current location - (sides + 1)) % sides
+            // move to the right = (current location r + 1) % sides
+            // move down formula = (current location  + (sides + 1)) % sides
+            int potential_y_coordinate = Math.floorMod((y_coordinate - (sides + 1)), sides);
+            int potential_x_coordinate = (x_coordinate + 1) % sides;
+            if (matrix[potential_y_coordinate][potential_x_coordinate] == null) {
+                x_coordinate = potential_x_coordinate;
+                y_coordinate = potential_y_coordinate;
+                matrix[y_coordinate][x_coordinate] = i;
             }
+            else {
+                y_coordinate = (y_coordinate  + (sides + 1)) % sides;
+                matrix[y_coordinate][x_coordinate] = i;
+            }
+        }
+        return matrix;
+    }
+
+    private static Integer[][] GenerateSignleMagicSqaure(int sides) {
+        if (sides < 6 || (sides - 2) % 4 != 0)
+            throw new IllegalArgumentException("base must be a positive "
+                    + "multiple of 4 plus 2");
+
+        int size = sides * sides;
+        int halfN = sides / 2;
+        int subSquareSize = size / 4;
+
+        Integer[][] subSquare = GenerateOddMagicSqaure(halfN);
+        Integer[] quadrantFactors = {0, 2, 3, 1};
+        Integer[][] result = new Integer[sides][sides];
+
+        for (int r = 0; r < sides; r++) {
+            for (int c = 0; c < sides; c++) {
+                int quadrant = (r / halfN) * 2 + (c / halfN);
+                result[r][c] = subSquare[r % halfN][c % halfN];
+                result[r][c] += quadrantFactors[quadrant] * subSquareSize;
+            }
+        }
+
+        int nColsLeft = halfN / 2;
+        int nColsRight = nColsLeft - 1;
+
+        for (int r = 0; r < halfN; r++)
+            for (int c = 0; c < sides; c++) {
+                if (c < nColsLeft || c >= sides - nColsRight
+                        || (c == nColsLeft && r == nColsLeft)) {
+
+                    if (c == 0 && r == nColsLeft)
+                        continue;
+
+                    int tmp = result[r][c];
+                    result[r][c] = result[r + halfN][c];
+                    result[r + halfN][c] = tmp;
+                }
+            }
+
+        return result;
+    }
+
+    private static Integer[][]  GenerateDoubleMagicSqaure(final int n) {
+        if (n < 4 || n % 4 != 0)
+            throw new IllegalArgumentException("base must be a positive "
+                    + "multiple of 4");
+
+        // pattern of count-up vs count-down zones
+        int bits = 0b1001_0110_0110_1001;
+        int size = n * n;
+        int mult = n / 4;  // how many multiples of 4
+
+        Integer[][] result = new Integer[n][n];
+
+        for (int r = 0, i = 0; r < n; r++) {
+            for (int c = 0; c < n; c++, i++) {
+                int bitPos = c / mult + (r / mult) * 4;
+                result[r][c] = (bits & (1 << bitPos)) != 0 ? i + 1 : size - i;
+            }
+        }
+        return result;
+    }
+
+    private void GenerateMagicSquareState(char id, int sides)  {
+        int switched_matrix = 0;
+        switch (id) {
+            case 'a':
+                switched_matrix = 3;
+                break;
+            case 'b':
+                switched_matrix = 2;
+                break;
+            case 'c':
+                switched_matrix = 1;
+                break;
+        }
+        for (int i = 0; i < sides; i++) {
+            int temp = magicSquare[switched_matrix][i];
+            magicSquare[switched_matrix][i] = magicSquare[0][i];
+            magicSquare[0][i] = temp;
         }
     }
 
-    public Integer[][] GetMagicSquareState(char id) throws MagicSquareStateDoesNotExist {
-        // Returns ArrayList that represents Magic Sqaure.
-        // Args:
-        //  id: Will be a, b, c, or d and this id will be used to find the magic square state that the implementer
-        //  wishes to return.
-        if (!magicSquareStates.containsKey(id))
-            throw new MagicSquareStateDoesNotExist("Magic Sqaure State does not exist!");
-        else
-            return magicSquareStates.get(id);
-    }
-
-    public void PrintMagicSqaure(char id, boolean printWithLines) throws MagicSquareStateDoesNotExist {
+    public void PrintMagicSqaure(char id, boolean printWithLines, int size) {
         // Prints the Magic Square Object.
         // Args:
         //  id: Will be a, b, c, or d and this id will be used to find the magic square state that the implementer
         //  wishes to print.
         //  printWithLines: boolean value that detrimines if magic sqaure will be printed with our without lines.
-        int size = magicSquareStates.get(id)[0].length;
-        if (!magicSquareStates.containsKey(id))
-            throw new MagicSquareStateDoesNotExist("Attempted to print a Magic Sqaure State that does not exist!");
-        else if (printWithLines) {
+        GenerateMagicSquareState(id, size);
+        if (printWithLines) {
             String lines = new String(new char[size]).replace("\0", " ---");
             for (int i = 0; i < size; i++) {
                 System.out.println(lines);
                 System.out.print("|");
                 for (int j = 0; j < size; j++) {
                     String spaces;
-                    if (magicSquareStates.get(id)[i][j] / 10 == 0)
-                        System.out.print("  " + magicSquareStates.get(id)[i][j] + " ");
-                    else if (magicSquareStates.get(id)[i][j] / 100 == 0)
-                        System.out.print(" " + magicSquareStates.get(id)[i][j] + " ");
+                    if (magicSquare[i][j] / 10 == 0)
+                        System.out.print("  " + magicSquare[i][j] + " ");
+                    else if (magicSquare[i][j] / 100 == 0)
+                        System.out.print(" " + magicSquare[i][j] + " ");
                     else
-                        System.out.print(magicSquareStates.get(id)[i][j] + " ");
+                        System.out.print(magicSquare[i][j] + " ");
                 }
                 System.out.println("|");
             }
@@ -79,12 +151,12 @@ public class MagicSquare {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     String spaces;
-                    if (magicSquareStates.get(id)[i][j] / 10 == 0)
-                        System.out.print("  " + magicSquareStates.get(id)[i][j] + " ");
-                    else if (magicSquareStates.get(id)[i][j] / 100 == 0)
-                        System.out.print(" " + magicSquareStates.get(id)[i][j] + " ");
+                    if (magicSquare[i][j] / 10 == 0)
+                        System.out.print("  " + magicSquare[i][j] + " ");
+                    else if (magicSquare[i][j] / 100 == 0)
+                        System.out.print(" " + magicSquare[i][j] + " ");
                     else
-                        System.out.print(magicSquareStates.get(id)[i][j] + " ");
+                        System.out.print(magicSquare[i][j] + " ");
                 }
                 System.out.println();
             }

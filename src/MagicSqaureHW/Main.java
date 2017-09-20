@@ -17,6 +17,16 @@ public class Main {
         return Integer.parseInt(userEnterNumber);
     }
 
+    public static char GetUserEnteredChar() {
+        // Prompts user to enter a int then returns the int.
+        boolean userEnterValidInt = false;
+        char userEnterChar;
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter (a-d) to get the state of the board: ");
+        userEnterChar = reader.next().charAt(0);
+        return userEnterChar;
+    }
+
     public static boolean IsValidNumberOfSides(int userEnterNumber) {
         // Validates whether the user enter a valid number of sides for the magic Square.
         // Args:
@@ -34,19 +44,15 @@ public class Main {
         return true;
     }
 
-    public static void main(String args[]) throws MagicSquareStateDoesNotExist {
-//        boolean createNewSquare;
-//        do {
-//            createNewSquare = false;
-//            int sidesOfMagicSqaure = GetUserEnteredInt();
-//
-//            if (IsValidNumberOfSides(sidesOfMagicSqaure))
-//                break;
-//            break;
-//        } while (createNewSquare);
+    public static void main(String args[]) {
+        boolean createNewSquare;
+        int sidesOfMagicSqaure;
+        char magicSquareState;
+        sidesOfMagicSqaure = GetUserEnteredInt();
+        magicSquareState = GetUserEnteredChar();
         MagicSquare magicSquare = new MagicSquare();
-        magicSquare.GenerateMagicSquareState('a', 3);
-        magicSquare.PrintMagicSqaure('a', true);
+        magicSquare.GenerateMagicSquareState(sidesOfMagicSqaure);
+        magicSquare.PrintMagicSqaure(magicSquareState, true, sidesOfMagicSqaure);
     }
 }
 
