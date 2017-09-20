@@ -9,7 +9,7 @@ public class MagicSquare {
     public void GenerateMagicSquareState(int size) {
         if (size % 2 != 0)
             magicSquare = GenerateOddMagicSqaure(size);
-        else if (size % 4 != 0)
+        else if ((size % 4 != 0) && (size > 6))
             magicSquare = GenerateSignleMagicSqaure(size);
         else
             magicSquare = GenerateDoubleMagicSqaure(size);
@@ -124,13 +124,17 @@ public class MagicSquare {
         }
     }
 
+    public Integer[][] GetMagicSquare() {
+        return magicSquare;
+    }
+
     public void PrintMagicSqaure(char id, boolean printWithLines, int size) {
         // Prints the Magic Square Object.
         // Args:
         //  id: Will be a, b, c, or d and this id will be used to find the magic square state that the implementer
         //  wishes to print.
         //  printWithLines: boolean value that detrimines if magic sqaure will be printed with our without lines.
-        GenerateMagicSquareState(id, size);
+        //GenerateMagicSquareState(id, size);
         if (printWithLines) {
             String lines = new String(new char[size]).replace("\0", " ---");
             for (int i = 0; i < size; i++) {
