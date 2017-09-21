@@ -15,7 +15,7 @@ public class MagicSquareTest {
         for (int i = 4; i <= 17; i++) {
             if (!(i == 2|| i == 6 || i == 10 || i == 14 || i == 1)) {
                 MagicSquare magicSquare = new MagicSquare();
-                magicSquare.GenerateMagicSquareState(i);
+                magicSquare.GenerateMagicSquare(i);
                 assertTrue(VerifyRow(magicSquare.GetMagicSquare(), i));
                 assertTrue(VerifyDiagonalRow(magicSquare.GetMagicSquare(), i));
             }
@@ -73,5 +73,35 @@ public class MagicSquareTest {
         else
             magicConstant = (size *((size * size) + 1))/2; //Doubly Even formula: [4 * (4^2 + 1)] / 2
         return magicConstant;
+    }
+
+    @Test
+    public void IsMagicSquareStateUnique() {
+        for (int i = 3; i <= 17; i++) {
+            MagicSquare magicSquare = new MagicSquare();
+            magicSquare.GenerateMagicSquare(i);
+            Integer[][] originalMagicSquare = magicSquare.GetMagicSquare();
+            if (!(i == 6 || i == 10 || i == 14)) {
+                for (char testedState = 'b'; testedState <= 'd'; testedState++) {
+                    magicSquare.GenerateMagicSquareState(testedState, i);
+                    assertFalse(Arrays.deepToString(originalMagicSquare) == Arrays.deepToString(magicSquare.GetMagicSquare()));
+                }
+            }
+        }
+    }
+
+    @Test
+    public void VerifyNewSquareStateIsMagicSquare() {
+        for (int i = 3; i <= 17; i++) {
+            MagicSquare magicSquare = new MagicSquare();
+            magicSquare.GenerateMagicSquare(i);
+            if (!(i == 2 || i == 6 || i == 10 || i == 14 || i == 1)) {
+                for (char testedState = 'b'; testedState <= 'd'; testedState++) {
+                    magicSquare.GenerateMagicSquareState(testedState, i);
+                    assertTrue(VerifyRow(magicSquare.GetMagicSquare(), i));
+                    assertTrue(VerifyDiagonalRow(magicSquare.GetMagicSquare(), i));
+                }
+            }
+        }
     }
 }

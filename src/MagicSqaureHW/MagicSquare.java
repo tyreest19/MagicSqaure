@@ -6,14 +6,13 @@ public class MagicSquare {
 
     Integer[][] magicSquare = new Integer[17][17];
 
-    public void GenerateMagicSquareState(int size) {
+    public void GenerateMagicSquare(int size) {
         if (size % 2 != 0)
             magicSquare = GenerateOddMagicSqaure(size);
         else if ((size % 4 != 0) && (size > 6))
             magicSquare = GenerateSignleMagicSqaure(size);
         else
             magicSquare = GenerateDoubleMagicSqaure(size);
-        //GenerateMagicSquareState('a', size);
         }
 
     private static Integer[][] GenerateOddMagicSqaure(int size) {
@@ -116,42 +115,44 @@ public class MagicSquare {
     }
 
 
-    private void GenerateMagicSquareState(char id, int size)  {
+    public void GenerateMagicSquareState(char id, int size)  {
         // Responsible for generating the 4 different magic square states.
         // Arguments:
         //  id: Indicates the square state.
         //  size: The size of the square so example a 4 by 4 square has a size 4.
         int switched_matrix = 0;
+        PrintMagicSqaure(true, size);
+        if (id == 'a') // a is the default state of the square
+            return;
         switch (id) {
-            case 'a':
-                switched_matrix = 3;
-                break;
             case 'b':
-                switched_matrix = 2;
+                switched_matrix = size - 1;
                 break;
             case 'c':
                 switched_matrix = 1;
                 break;
+            case 'd':
+                switched_matrix = 2;
+                break;
         }
         for (int i = 0; i < size; i++) {
-            int temp = magicSquare[i][switched_matrix];
-            magicSquare[i][switched_matrix] = magicSquare[i][0];
-            magicSquare[i][0] = temp;
+            int temp = magicSquare[switched_matrix][i];
+            magicSquare[switched_matrix][i] = magicSquare[0][i];
+            magicSquare[0][i] = temp;
         }
-        //PrintMagicSqaure('a', true, size);
+        PrintMagicSqaure(true, size);
     }
 
     public Integer[][] GetMagicSquare() {
         return magicSquare;
     }
 
-    public void PrintMagicSqaure(char id, boolean printWithLines, int size) {
+    public void PrintMagicSqaure(boolean printWithLines, int size) {
         // Prints the Magic Square Object.
         // Args:
         //  id: Will be a, b, c, or d and this id will be used to find the magic square state that the implementer
         //  wishes to print.
         //  printWithLines: boolean value that detrimines if magic sqaure will be printed with our without lines.
-        //GenerateMagicSquareState(id, size);
         if (printWithLines) {
             String lines = new String(new char[size]).replace("\0", " ---");
             for (int i = 0; i < size; i++) {
