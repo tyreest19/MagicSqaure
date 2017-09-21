@@ -23,7 +23,7 @@ public class MagicSquare {
         matrix[y_coordinate][x_coordinate] = 1;
         for (int i = 2; i <= size * size; i++) {
             // move up formula = (current location - (size + 1)) % size
-            // move to the right = (current location r + 1) % size
+            // move to the right = (current location + 1) % size
             // move down formula = (current location  + (size + 1)) % size
             int potential_y_coordinate = Math.floorMod((y_coordinate - (size + 1)), size);
             int potential_x_coordinate = (x_coordinate + 1) % size;
@@ -82,23 +82,39 @@ public class MagicSquare {
         return result;
     }
 
-    private static Integer[][]  GenerateDoubleMagicSqaure(final int side) {
+    private static Integer[][]  GenerateDoubleMagicSqaure(int size) {
         // Generates a magic squares for even numbers that are divisible by 4
         // pattern of count-up vs count-down zones
-        int bits = 0b1001_0110_0110_1001;
-        int size = side * side;
-        int mult = size / 4;  // how many multiples of 4
+        int N = size;
 
-        Integer[][] result = new Integer[size][size];
+        int miniSqrNum = size/4; //size of boxes
+        int cnt = 1; 	      //counter 1 to N*N
+        int invCnt = N*N;     //counter N*N to 1
+        Integer results[][] = new Integer[size][size];
+        for(int i=0;i<N;i++){
 
-        for (int r = 0, i = 0; r < size; r++) {
-            for (int c = 0; c < size; c++, i++) {
-                int bitPos = c / mult + (r / mult) * 4;
-                result[r][c] = (bits & (1 << bitPos)) != 0 ? i + 1 : size - i;
+            for(int j=0;j<N;j++){
+
+                if(j>=miniSqrNum && j<N-miniSqrNum){
+                    if(i>=miniSqrNum && i<N-miniSqrNum)
+                        results[i][j] = cnt;    //central box
+                    else
+                        results[i][j] = invCnt; // up & down boxes
+
+                }
+                else if(i<miniSqrNum || i>=N-miniSqrNum){
+                    results[i][j]=cnt;	         // 4 corners
+                }
+                else
+                    results[i][j] = invCnt;  	// left & right boxes
+                cnt++;
+                invCnt--;
             }
+
         }
-        return result;
+        return results;
     }
+
 
     private void GenerateMagicSquareState(char id, int size)  {
         // Responsible for generating the 4 different magic square states.
