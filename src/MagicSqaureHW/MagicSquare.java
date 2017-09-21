@@ -13,7 +13,7 @@ public class MagicSquare {
             magicSquare = GenerateSignleMagicSqaure(size);
         else
             magicSquare = GenerateDoubleMagicSqaure(size);
-
+        //GenerateMagicSquareState('a', size);
         }
 
     private static Integer[][] GenerateOddMagicSqaure(int size) {
@@ -134,10 +134,11 @@ public class MagicSquare {
                 break;
         }
         for (int i = 0; i < size; i++) {
-            int temp = magicSquare[switched_matrix][i];
-            magicSquare[switched_matrix][i] = magicSquare[0][i];
-            magicSquare[0][i] = temp;
+            int temp = magicSquare[i][switched_matrix];
+            magicSquare[i][switched_matrix] = magicSquare[i][0];
+            magicSquare[i][0] = temp;
         }
+        //PrintMagicSqaure('a', true, size);
     }
 
     public Integer[][] GetMagicSquare() {

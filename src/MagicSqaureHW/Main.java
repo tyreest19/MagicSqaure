@@ -26,6 +26,12 @@ public class Main {
         userEnterChar = reader.next().charAt(0);
         return userEnterChar;
     }
+    public static boolean ContinueProgram() {
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter yes to make another magic square and no to end the program: ");
+        String userInput = reader.next().toLowerCase();
+        return userInput.equals("yes");
+    }
 
     public static boolean IsValidNumberOfSides(int userEnterNumber) {
         // Validates whether the user enter a valid number of sides for the magic Square.
@@ -48,11 +54,15 @@ public class Main {
         boolean createNewSquare;
         int sidesOfMagicSqaure;
         char magicSquareState;
-        sidesOfMagicSqaure = GetUserEnteredInt();
-        magicSquareState = GetUserEnteredChar();
-        MagicSquare magicSquare = new MagicSquare();
-        magicSquare.GenerateMagicSquareState(sidesOfMagicSqaure);
-        magicSquare.PrintMagicSqaure(magicSquareState, true, sidesOfMagicSqaure);
+        boolean contiune_program;
+        do {
+            sidesOfMagicSqaure = GetUserEnteredInt();
+            magicSquareState = GetUserEnteredChar();
+            MagicSquare magicSquare = new MagicSquare();
+            magicSquare.GenerateMagicSquareState(sidesOfMagicSqaure);
+            magicSquare.PrintMagicSqaure(magicSquareState, true, sidesOfMagicSqaure);
+            contiune_program = ContinueProgram();
+        } while (contiune_program);
     }
 }
 

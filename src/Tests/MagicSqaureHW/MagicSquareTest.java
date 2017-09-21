@@ -12,7 +12,7 @@ public class MagicSquareTest {
     @Test
     public void ValidateMagicSquare() throws Exception {
         //int msgicConstant = n[((n*n)+1)/2]; //sides * [sides^2+1)/2]
-        for (int i = 1; i <= 17; i++) {
+        for (int i = 4; i <= 17; i++) {
             if (!(i == 2|| i == 6 || i == 10 || i == 14 || i == 1)) {
                 MagicSquare magicSquare = new MagicSquare();
                 magicSquare.GenerateMagicSquareState(i);
