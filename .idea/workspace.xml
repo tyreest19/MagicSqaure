@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d236de6-ea13-4299-9116-409ffdcebd38" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MagicSqaure/MagicSqaureHW/MagicSquare.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/MagicSqaure/MagicSqaureHW/MagicSquareTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MagicSqaure/MagicSqaureHW/Main.class" afterPath="$PROJECT_DIR$/out/production/MagicSqaure/MagicSqaureHW/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java" afterPath="$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MagicSqaureHW/Main.java" afterPath="$PROJECT_DIR$/src/MagicSqaureHW/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java" afterPath="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java" afterPath="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,40 +22,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="234">
+              <caret line="259" column="75" lean-forward="false" selection-start-line="259" selection-start-column="75" selection-end-line="259" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MagicSquare.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="142" column="37" lean-forward="false" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MagicSquareTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="86" column="126" lean-forward="false" selection-start-line="86" selection-start-column="126" selection-end-line="86" selection-end-column="126" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,9 +55,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/MagicSqaureHW/Main.java" />
-        <option value="$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java" />
         <option value="$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java" />
+        <option value="$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java" />
+        <option value="$PROJECT_DIR$/src/MagicSqaureHW/Main.java" />
       </list>
     </option>
   </component>
@@ -101,6 +81,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -137,9 +120,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MagicSquareTest">
+  <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="MagicSquareTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -186,6 +166,31 @@
       <option name="MAIN_CLASS_NAME" value="MagicSqaureHW.MagicSquareTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="MagicSquareTest.VerifyNewSquareStateIsMagicSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="MagicSqaureHW.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MagicSqaure" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="MagicSqaureHW" />
+      <option name="MAIN_CLASS_NAME" value="MagicSqaureHW.MagicSquareTest" />
+      <option name="METHOD_NAME" value="VerifyNewSquareStateIsMagicSquare" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -321,16 +326,18 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.MagicSquareTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MagicSquareTest.VerifyNewSquareStateIsMagicSquare" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MagicSquareTest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest" />
         <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MagicSquareTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MagicSquareTest.VerifyNewSquareStateIsMagicSquare" />
       </list>
     </recent_temporary>
   </component>
@@ -348,35 +355,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 31m 30s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 33m 03s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 37m 30s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 37m 41s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 39m 14s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 39m 47s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 42m 04s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 45m 30s.xml">
-      <configuration name="MagicSquareTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MagicSquareTest - 2017.09.21 at 10h 45m 47s.xml">
       <configuration name="MagicSquareTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MagicSquareTest - 2017.09.21 at 10h 50m 20s.xml">
       <configuration name="MagicSquareTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 55m 41s.xml">
+      <configuration name="MagicSquareTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MagicSquareTest - 2017.09.21 at 10h 57m 22s.xml">
+      <configuration name="MagicSquareTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MagicSquareTest - 2017.09.21 at 11h 00m 03s.xml">
+      <configuration name="MagicSquareTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MagicSquareTest - 2017.09.21 at 11h 02m 02s.xml">
+      <configuration name="MagicSquareTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MagicSquareTest_VerifyNewSquareStateIsMagicSquare - 2017.09.21 at 11h 01m 50s.xml">
+      <configuration name="MagicSquareTest.VerifyNewSquareStateIsMagicSquare" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest - 2017.09.21 at 10h 56m 51s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest - 2017.09.21 at 11h 02m 08s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest - 2017.10.04 at 22h 59m 36s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -391,12 +398,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -449,6 +456,40 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -467,9 +508,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -485,9 +524,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="79" lean-forward="false" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,9 +558,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -557,9 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -593,27 +626,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,22 +634,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/MagicSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="142" column="37" lean-forward="false" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MagicSquareTest.java">
+    <entry file="file://$PROJECT_DIR$/src/MagicSqaureHW/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="86" column="126" lean-forward="false" selection-start-line="86" selection-start-column="126" selection-end-line="86" selection-end-column="126" />
+        <state relative-caret-position="234">
+          <caret line="259" column="75" lean-forward="false" selection-start-line="259" selection-start-column="75" selection-end-line="259" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/MagicSqaureHW/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
